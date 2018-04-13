@@ -210,7 +210,7 @@ module.exports = ""
 /***/ "./src/app/nav/nav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-dark\">\r\n  <div class=\"container-fluid\">\r\n    <!-- Brand and toggle get grouped for better mobile display -->\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" href=\"#\">The Matrix</a>\r\n    </div>\r\n\r\n    <!-- Collect the nav links, forms, and other content for toggling -->\r\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <li class=\"active\"><a href=\"#\">Matches <span class=\"sr-only\">(current)</span></a></li>\r\n        <li><a href=\"#\">Friends List</a></li>\r\n        <li><a href=\"#\">Messages</a></li>\r\n        <li class=\"dropdown\">\r\n          <ul class=\"dropdown-menu\">\r\n            <li><a href=\"#\">Action</a></li>\r\n            <li><a href=\"#\">Another action</a></li>\r\n            <li><a href=\"#\">Something else here</a></li>\r\n            <li role=\"separator\" class=\"divider\"></li>\r\n            <li><a href=\"#\">Separated link</a></li>\r\n            <li role=\"separator\" class=\"divider\"></li>\r\n            <li><a href=\"#\">One more separated link</a></li>\r\n          </ul>\r\n        </li>\r\n      </ul>\r\n      <form class=\"navbar-form navbar-right\">\r\n        <div class=\"form-group\">\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"User name\">\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"Password\">\r\n        </div>\r\n        <button type=\"submit\" class=\"btn btn-default\">Sign In</button>\r\n      </form>\r\n\r\n    </div><!-- /.navbar-collapse -->\r\n  </div><!-- /.container-fluid -->\r\n</nav>\r\n"
+module.exports = "<nav class=\"navbar navbar-dark\">\r\n  <!-- Updateing some information  -->\r\n  <div class=\"container-fluid\">\r\n    <!-- Brand and toggle get grouped for better mobile display -->\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n      </button>\r\n      <a class=\"navbar-brand\" href=\"#\">The Matrix</a>\r\n    </div>\r\n\r\n    <!-- Collect the nav links, forms, and other content for toggling -->\r\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <li class=\"active\"><a href=\"#\">Matches <span class=\"sr-only\">(current)</span></a></li>\r\n        <li><a href=\"#\">Friends List</a></li>\r\n        <li><a href=\"#\">Messages</a></li>\r\n        <li class=\"dropdown\">\r\n          <ul class=\"dropdown-menu\">\r\n            <li><a href=\"#\">Action</a></li>\r\n            <li><a href=\"#\">Another action</a></li>\r\n            <li><a href=\"#\">Something else here</a></li>\r\n            <li role=\"separator\" class=\"divider\"></li>\r\n            <li><a href=\"#\">Separated link</a></li>\r\n            <li role=\"separator\" class=\"divider\"></li>\r\n            <li><a href=\"#\">One more separated link</a></li>\r\n          </ul>\r\n        </li>\r\n      </ul>\r\n      <form class=\"navbar-form navbar-right\">\r\n        <div class=\"form-group\">\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"User name\">\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"Password\">\r\n        </div>\r\n        <button type=\"submit\" class=\"btn btn-default\">Sign In</button>\r\n      </form>\r\n\r\n    </div><!-- /.navbar-collapse -->\r\n  </div><!-- /.container-fluid -->\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -289,6 +289,7 @@ var RegisterComponent = /** @class */ (function () {
         this.model = {};
     }
     RegisterComponent.prototype.ngOnInit = function () {
+        console.log("This is a test");
     };
     RegisterComponent.prototype.login = function () {
         console.log(this.model);
@@ -334,9 +335,25 @@ var AuthService = /** @class */ (function () {
         this.http = http;
         this.baseUrl = 'http://lochttp://localhost:52985/api/auth/login';
     }
-    AuthService.prototype.login = function (value) {
-        var contentHeader = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpHeaders */]({ 'Content-type': 'application/json' });
-        return this.http.post(this.baseUrl, value, { headers: contentHeader });
+    /*
+    login(value: string) {
+  
+      const contentHeader = new HttpHeaders({ 'Content-type': 'application/json'})
+  
+      return this.http.post(this.baseUrl, value, { headers: contentHeader });
+  
+    } */
+    AuthService.prototype.login = function (user) {
+        /* return this.http.post<AuthUser>(this.baseUrl + '/auth/login', user)
+           .map((result: AuthUser) => {
+             if (result) {
+               localStorage.setItem('token', result.tokenString);*/
+        localStorage.setItem('user', JSON.stringify(user));
+        console.log("Never");
+        // }
+        return user;
+        //}
+        //);
     };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),

@@ -6676,7 +6676,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* Version */
 /* unused harmony export HttpBackend */
 /* unused harmony export HttpHandler */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpClient; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return HttpHeaders; });
+/* unused harmony export HttpHeaders */
 /* unused harmony export HTTP_INTERCEPTORS */
 /* unused harmony export JsonpClientBackend */
 /* unused harmony export JsonpInterceptor */
