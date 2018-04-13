@@ -5,14 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Matricks\src\app\models\User.d.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Matricks\src\app\models\User.d.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
